@@ -1,0 +1,45 @@
+package assignments;
+import java.util.*;
+
+// Employee class
+class Employee1{
+	int id;
+	String name;
+	String city;
+
+	// Constructor
+	Employee1(int id, String name, String city) {
+		this.id = id;
+		this.name = name;
+		this.city = city;
+	}
+
+	// Method to display details
+	void display() {
+		System.out.println("ID: " + id + ", Name: " + name + ", City: " + city);
+	}
+}
+
+// Main class
+public class EmployeeHashMapDemo {
+	public static void main(String[] args) {
+
+		// Create HashMap
+		Map<Integer, Employee1> employeesMap = new HashMap<>();
+
+		// Add 5 employees
+		employeesMap.put(101, new Employee1(101, "Nandhu", "Hyderabad"));
+		employeesMap.put(102, new Employee1(102, "Ajay", "Bangalore"));
+		employeesMap.put(103, new Employee1(103, "Jafeer", "Chennai"));
+		employeesMap.put(104, new Employee1(104, "Sravani", "Delhi"));
+		employeesMap.put(105, new Employee1(105, "Poojitha", "Pune"));
+
+		// Display all employees
+		System.out.println("All Employee Details:");
+		for (Map.Entry<Integer, Employee1> entry : employeesMap.entrySet()) {
+			System.out.print("Key: " + entry.getKey() + " -> ");
+			entry.getValue().display();
+		}
+	}
+}
+
