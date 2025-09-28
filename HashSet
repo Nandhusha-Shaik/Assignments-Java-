@@ -1,0 +1,43 @@
+package assignments;
+
+import java.util.*;
+import java.util.HashSet;
+
+public class HashSetEx{
+
+	public static void main(String[] args) {
+	
+		Set<Integer> s1=new HashSet<>();
+		
+		s1.add(21);
+		s1.add(12);
+		s1.add(15);
+		s1.add(76);
+		s1.add(90);
+		
+		Set<Integer> s2=new HashSet<>();
+		
+		s2.add(11);
+		s2.add(14);
+		s2.add(17);
+		s2.add(0);
+		s2.add(9);
+		
+		s2.addAll(s1);
+		System.out.println("Union of two numbers :"+ s2);
+		
+		Set<Integer> s3=new HashSet<>();
+		
+		s3.add(11);
+		s3.add(16);
+		s3.add(14);
+		s3.add(0);
+		s3.add(90);
+		
+		s3.retainAll(s1);
+		System.out.println("Intersection of two numbers :"+ s3);
+		
+		s2.removeAll(s1);
+		System.out.println("Difference of two numbers :"+ s2);
+	}	
+}
