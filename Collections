@@ -1,0 +1,70 @@
+package assignments;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class ArrayListEx {
+
+	public static void main(String[] args) {
+		
+		List<String> colors=new ArrayList<String>();
+		
+		colors.add("Pink");
+		colors.add("Red");
+		colors.add("Black");
+		colors.add("Green");
+		colors.add("Purple");
+		
+		// To Iterate through the list
+		System.out.println("Elements in ArrayList : ");
+		colors.forEach(i -> System.out.print(i+"\t"));
+		
+		System.out.println("\nElements after adding at first : ");
+		colors.addFirst("White");
+		colors.forEach(i -> System.out.println(i));
+		
+		System.out.println("\nElements after index 2 : ");
+		System.out.println(colors.get(2));
+		
+		System.out.println("\nElements after updating at index 1 : ");
+		colors.set(1, "Skyblue");
+		colors.forEach(i -> System.out.print(i+"\t"));
+		
+		System.out.println("\nElements after deleting  : ");
+		colors.remove(2);
+		colors.forEach(i -> System.out.print(i+"\t"));
+		
+		for(int i=0;i<colors.size();i++) {
+			
+			if (colors.get(i) == "Black") {
+				System.out.println("\nColor Found");
+				break;
+			}
+			if(i == colors.size()) {
+				System.out.println("\nColor Not Found");
+			}	
+		}
+		
+		//sort ArrayList
+		Collections.sort(colors);
+		System.out.println("Sorted Elements : \t");
+		colors.forEach(i -> System.out.print(i+"\n"));
+		
+		System.out.println("Array Copying : \t");
+		List<String> arrCopy = new ArrayList<String>(colors);
+		arrCopy.forEach(i -> System.out.print(i+"\n"));
+		
+		System.out.println("Shuffle Elements : \t");
+		Collections.shuffle(colors);
+		colors.forEach(i -> System.out.print(i+"\n"));
+		
+		System.out.println("Reverse Elements : \t");
+		Collections.reverse(colors);
+		colors.forEach(i -> System.out.print(i+"\n"));
+		
+		System.out.println("Set Element at Index 2 : \t");
+		colors.set(2, "Crimson");
+		colors.forEach(i -> System.out.print(i+"\n"));
+	}
+}
